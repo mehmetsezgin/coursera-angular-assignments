@@ -20,13 +20,18 @@
   };
 
   function numberOfItems(items){
-    var lengthofItems = 0;
     if(items === ""){
       return 0;
     }else{
-      return items.split(',').length;
+      var itemArray = items.split(',');
+      var itemsLength = 0;
+      for (var i=0; i<itemArray.length; i++) {
+        if (itemArray[i].trim()) {
+          itemsLength++;
+        }
+      }
+      return itemsLength;
     }
   }
-
 }
 })();
